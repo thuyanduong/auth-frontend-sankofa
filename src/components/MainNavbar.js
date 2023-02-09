@@ -23,8 +23,8 @@ function MainNavbar() {
         >
           <span className="navbar-toggler-icon"/>
         </button>
-        <div className="collapse navbar-collapse" id="navbarMenu">
-          <ul className="navbar-nav">
+        <div className="collapse navbar-collapse ml-auto" id="navbarMenu">
+          <ul className="navbar-nav  ml-auto">
             {
               items.map((item, i) => (
                 <li key={i} className="nav-item">

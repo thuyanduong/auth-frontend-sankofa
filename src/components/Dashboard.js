@@ -1,10 +1,8 @@
 import { Helmet } from 'react-helmet';
-import { useNavigate } from 'react-router-dom';
 
 function Dashboard() {
-  const title = `Welcome Username`;
-
-  const navigate = useNavigate();
+  const title = `Welcome Username!`;
+  const subtitle = `Your bio.`
 
   return (
     <>
@@ -15,6 +13,7 @@ function Dashboard() {
         <div className="px-4 py-5 my-5 text-center">
           <h1 className="display-5 fw-bold">{title}</h1>
           <div className="col-lg-6 mx-auto">
+            <h4>{subtitle}</h4>
             <p className="lead mb-4">
               Here is your Robot Army!
             </p>

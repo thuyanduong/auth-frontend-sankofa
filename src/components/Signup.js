@@ -1,5 +1,5 @@
 import { Helmet } from 'react-helmet';
-import { Col, Button, Form, FormControl, InputGroup, FormLabel, Spinner,} from 'react-bootstrap';
+import { Col, Button, Form, FormControl, InputGroup, FormLabel } from 'react-bootstrap';
 import { useState } from 'react';
 
 function Signup() {

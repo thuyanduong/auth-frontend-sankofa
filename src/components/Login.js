@@ -1,9 +1,7 @@
 import { useState } from 'react';
 import { Helmet } from 'react-helmet';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
-import {
-  Button, Col, Form, FormControl, FormLabel, Row, Spinner,
-} from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import { Button, Col, Form, FormControl, FormLabel, Row } from 'react-bootstrap';
 
 function Login() {
 

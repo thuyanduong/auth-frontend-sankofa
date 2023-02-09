@@ -1,5 +1,5 @@
 import './App.css';
-import {Navigate, Routes, Route,} from 'react-router-dom';
+import {Routes, Route,} from 'react-router-dom';
 import Home from './components/LandingPage';
 import NotFound from './components/NotFound';
 import MainNavbar from './components/MainNavbar';
