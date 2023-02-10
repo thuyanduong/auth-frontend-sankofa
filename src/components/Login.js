@@ -1,12 +1,19 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { Helmet } from 'react-helmet';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Button, Col, Form, FormControl, FormLabel, Row } from 'react-bootstrap';
+import Context from '../Context/Context';
 
 function Login() {
+  let {} = useContext(Context)
+  let navigate = useNavigate()
 
   let [username, setUsername] = useState("")
   let [password, setPassword] = useState("")
+
+  function submitForm(e){
+    console.log("submitting log in form")
+  }
 
   return (
     <>
@@ -14,7 +21,7 @@ function Login() {
         <title>Login</title>
       </Helmet>
       <main className="container-auth text-center">
-        <Form noValidate>
+        <Form noValidate onSubmit={submitForm}>
           <i className="bi bi-file-lock-fill auth-icon my-4"/>  
           <p className="mb-3 fw-normal">
             Fill up the form and then click <strong>Log In</strong> button to sign up.
@@ -33,7 +40,7 @@ function Login() {
                          className="form-control form-input-bottom"
                          placeholder="Password"
                          value={password}
-                         onChange={(e) => setPassword(e.target.password)}
+                         onChange={(e) => setPassword(e.target.value)}
             />
             <FormLabel>Password</FormLabel>
           </Form.Group>
@@ -49,7 +56,7 @@ function Login() {
             <div className="col-6"><Link to="/signup">Create an account</Link></div>
           </div>
           <Button className="w-100 btn btn-lg btn-primary"
-                  type="button"
+                  type="submit"
           >
             <span className="px-2">Log in</span>
           </Button>

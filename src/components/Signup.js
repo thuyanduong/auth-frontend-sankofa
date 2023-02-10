@@ -1,12 +1,20 @@
 import { Helmet } from 'react-helmet';
 import { Col, Button, Form, FormControl, InputGroup, FormLabel } from 'react-bootstrap';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import { useNavigate } from 'react-router-dom'
+import Context from '../Context/Context';
 
 function Signup() {
+  let {} = useContext(Context)
+  let navigate = useNavigate()
 
   let [username, setUsername] = useState("")
   let [password, setPassword] = useState("")
   let [bio, setBio] = useState("")
+
+  function submitForm(e){
+    console.log("submitting sign up form")
+  }
 
   return (
     <>
@@ -14,7 +22,7 @@ function Signup() {
         <title>Signup</title>
       </Helmet>
       <main className="container-signup">
-        <Form className="row g-2" noValidate>
+        <Form className="row g-2" noValidate onSubmit={submitForm}>
           <i className="bi bi-file-lock-fill auth-icon mt-3 text-center"/>
           <p className="fw-normal text-center">Fill up the form and then click the <strong>Sign up</strong> button to sign up.</p>
           <Form.Group as={Col} md="12" controlId="inputUsername">
@@ -58,7 +66,7 @@ function Signup() {
             />
           </Form.Group>
           <Button className="w-100 btn btn-lg btn-primary"
-                  type="button"
+                  type="submit"
           >
             <span className="px-2">Sign up</span>
           </Button>

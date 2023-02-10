@@ -1,8 +1,13 @@
+import { useContext } from 'react'
 import { Helmet } from 'react-helmet';
+import Context from '../Context/Context';
+import { ListGroup } from "react-bootstrap"
 
 function Dashboard() {
-  const title = `Welcome Username!`;
-  const subtitle = `Your bio.`
+  let {user, usersRobots} = useContext(Context)
+
+  const title = user ? `Welcome ${user.username}!`: "No User Signed in";
+  const subtitle = user ? `${user.bio}` : "No bio."
 
   return (
     <>
@@ -14,17 +19,16 @@ function Dashboard() {
           <h1 className="display-5 fw-bold">{title}</h1>
           <div className="col-lg-6 mx-auto">
             <h4>{subtitle}</h4>
-            <p className="lead mb-4">
-              Here is your Robot Army!
-            </p>
-            <div className="d-grid gap-2 d-sm-flex justify-content-sm-center">
-              <ul>
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-                <li>4</li>
-              </ul>
-            </div>
+              <p className="lead mb-4">
+                Here is your Robot Army!
+              </p>
+              <div className="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                <ListGroup>
+                  {
+                    usersRobots.map(bot => <ListGroup.Item>{bot.robot_name}</ListGroup.Item>)
+                  }
+                </ListGroup>
+              </div>
           </div>
         </div>
       </main>
