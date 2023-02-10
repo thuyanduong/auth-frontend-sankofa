@@ -4,7 +4,7 @@ import { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom'
 import Context from '../Context/Context';
 
-function Signup() {
+function Register() {
   let {} = useContext(Context)
   let navigate = useNavigate()
 
@@ -13,18 +13,18 @@ function Signup() {
   let [bio, setBio] = useState("")
 
   function submitForm(e){
-    console.log("submitting sign up form")
+    console.log("submitting register form")
   }
 
   return (
     <>
       <Helmet>
-        <title>Signup</title>
+        <title>Register</title>
       </Helmet>
       <main className="container-signup">
         <Form className="row g-2" noValidate onSubmit={submitForm}>
           <i className="bi bi-file-lock-fill auth-icon mt-3 text-center"/>
-          <p className="fw-normal text-center">Fill up the form and then click the <strong>Sign up</strong> button to sign up.</p>
+          <p className="fw-normal text-center">Fill up the form and then click the <strong>Register</strong> button to create an acount.</p>
           <Form.Group as={Col} md="12" controlId="inputUsername">
             <Form.Label>Username</Form.Label>
             <InputGroup hasValidation>
@@ -68,7 +68,7 @@ function Signup() {
           <Button className="w-100 btn btn-lg btn-primary"
                   type="submit"
           >
-            <span className="px-2">Sign up</span>
+            <span className="px-2">Register</span>
           </Button>
         </Form>
       </main>
@@ -76,4 +76,4 @@ function Signup() {
   );
 }
 
-export default Signup;
+export default Register;

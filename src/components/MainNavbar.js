@@ -8,7 +8,7 @@ function MainNavbar() {
 
   const loggedOutItems = [
     { path: '/login', title: 'Login' },
-    { path: '/signup', title: 'Signup' },
+    { path: '/register', title: 'Register' },
   ];
 
   const loggedInItems = [
