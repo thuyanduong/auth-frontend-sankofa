@@ -12,6 +12,7 @@ function Login() {
   let [password, setPassword] = useState("")
 
   function submitForm(e){
+    e.preventDefault()
     console.log("submitting log in form with:", username, password)
   }
 
