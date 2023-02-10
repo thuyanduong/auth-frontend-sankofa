@@ -25,7 +25,7 @@ function Dashboard() {
               <div className="d-grid gap-2 d-sm-flex justify-content-sm-center">
                 <ListGroup>
                   {
-                    usersRobots.map(bot => <ListGroup.Item>{bot.robot_name}</ListGroup.Item>)
+                    usersRobots.map(bot => <ListGroup.Item key={bot.id}>{bot.robot_name}</ListGroup.Item>)
                   }
                 </ListGroup>
               </div>
