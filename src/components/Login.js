@@ -12,7 +12,7 @@ function Login() {
   let [password, setPassword] = useState("")
 
   function submitForm(e){
-    console.log("submitting log in form")
+    console.log("submitting log in form with:", username, password)
   }
 
   return (

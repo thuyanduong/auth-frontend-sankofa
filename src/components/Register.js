@@ -13,7 +13,7 @@ function Register() {
   let [bio, setBio] = useState("")
 
   function submitForm(e){
-    console.log("submitting register form")
+    console.log("submitting register form with: ", username, password, bio)
   }
 
   return (
