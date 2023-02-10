@@ -13,6 +13,7 @@ function Register() {
   let [bio, setBio] = useState("")
 
   function submitForm(e){
+    e.preventDefault()
     console.log("submitting register form with: ", username, password, bio)
   }
 
